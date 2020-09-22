@@ -4,9 +4,8 @@ import axios from 'axios'
 const debug = process.env.NODE_ENV !== 'production'
 
 export function getRecommend() {
-    // 线上环境地址，同学们根据自己的需要配置修改
-    // const url = debug ? '/api/getTopBanner' : 'http://ustbhuangyi.com/music/api/getTopBanner'
-    const url = '/api/getTopBanner'
+    const url = debug ? '/api/getTopBanner' : 'http://47.108.13.69/music/api/getTopBanner'
+        // const url = '/api/getTopBanner'
 
 
     const data = Object.assign({}, commonParams, {
@@ -49,9 +48,8 @@ export function getRecommend() {
 }
 
 export function getDiscList() {
-    // 线上环境地址，同学们根据自己的需要配置修改
-    // const url = debug ? '/api/getDiscList' : 'http://ustbhuangyi.com/music/api/getDiscList'
-    const url = '/api/getDiscList'
+    const url = debug ? '/api/getDiscList' : 'http://47.108.13.69/music/api/getDiscList'
+        // const url = '/api/getDiscList'
 
     const data = Object.assign({}, commonParams, {
         platform: 'yqq',
@@ -74,7 +72,7 @@ export function getDiscList() {
 
 // 获取歌单的歌曲列表
 export function getSongList(disstid) {
-    const url = !debug ? '/api/getCdInfo' : 'http://ustbhuangyi.com/music/api/getCdInfo'
+    const url = debug ? '/api/getCdInfo' : 'http://47.108.13.69/music/api/getCdInfo'
 
     const data = Object.assign({}, commonParams, {
         disstid,
