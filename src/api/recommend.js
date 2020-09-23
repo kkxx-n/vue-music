@@ -4,7 +4,7 @@ import axios from 'axios'
 const debug = process.env.NODE_ENV !== 'production'
 
 export function getRecommend() {
-    const url = debug ? '/api/getTopBanner' : 'http://47.108.13.69/music/api/getTopBanner'
+    const url = !debug ? '/api/getTopBanner' : 'http://47.108.13.69/music/api/getTopBanner'
         // const url = '/api/getTopBanner'
 
 
@@ -48,7 +48,7 @@ export function getRecommend() {
 }
 
 export function getDiscList() {
-    const url = debug ? '/api/getDiscList' : 'http://47.108.13.69/music/api/getDiscList'
+    const url = !debug ? '/api/getDiscList' : 'http://47.108.13.69/music/api/getDiscList'
         // const url = '/api/getDiscList'
 
     const data = Object.assign({}, commonParams, {
@@ -72,7 +72,7 @@ export function getDiscList() {
 
 // 获取歌单的歌曲列表
 export function getSongList(disstid) {
-    const url = debug ? '/api/getCdInfo' : 'http://47.108.13.69/music/api/getCdInfo'
+    const url = !debug ? '/api/getCdInfo' : 'http://47.108.13.69/music/api/getCdInfo'
 
     const data = Object.assign({}, commonParams, {
         disstid,

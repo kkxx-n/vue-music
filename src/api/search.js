@@ -20,7 +20,7 @@ export function getHotKey() {
 
 // 获取搜索结果 query检索字段 page页数 zhida是否展示歌手详情
 export function search(query, page, zhida, perpage) {
-    const url = debug ? '/api/search' : 'http://47.108.13.69/music/api/search'
+    const url = !debug ? '/api/search' : 'http://47.108.13.69/music/api/search'
 
     const data = Object.assign({}, commonParams, {
         w: query,

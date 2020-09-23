@@ -7,7 +7,7 @@ const debug = process.env.NODE_ENV !== 'production'
 
 // 获取音乐歌词
 export function getLyric(mid) {
-    const url = debug ? '/api/lyric' : 'http://47.108.13.69/music/api/lyric'
+    const url = !debug ? '/api/lyric' : 'http://47.108.13.69/music/api/lyric'
 
     const data = Object.assign({}, commonParams, {
         songmid: mid,
@@ -28,7 +28,7 @@ export function getLyric(mid) {
 
 // 获取音乐列表
 export function getSongsUrl(songs) {
-    const url = debug ? '/api/getPurlUrl' : 'http://47.108.13.69/music/api/getPurlUrl'
+    const url = !debug ? '/api/getPurlUrl' : 'http://47.108.13.69/music/api/getPurlUrl'
 
     let mids = []
     let types = []
